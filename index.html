@@ -4,41 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Webpage</title>
-
     <style>
-      /* --------------------
-       BASIC RESET
-    --------------------- */
+      html,
       body {
+        height: 100%;
         margin: 0;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
         font-family: Arial, sans-serif;
         background: #f7f7f7;
       }
 
-      /* --------------------
-       NAVBAR
-    --------------------- */
+      /*NAVBAR */
       nav {
         background: hsl(34, 76%, 54%);
         padding: 10px 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap; /* allow wrapping for mobile menu */
       }
 
       nav .logo {
         color: #fff;
-        font-size: 22px;
+        font-size: 30px;
         font-weight: bold;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
       }
 
       nav ul {
         list-style: none;
         display: flex;
         gap: 20px;
-        overflow: hidden;
-        transition: max-height 0.4s ease;
-        max-height: none;
+        margin: 0;
+        padding: 0;
+        flex-direction: row;
       }
 
       nav ul li a {
@@ -52,9 +56,7 @@
         color: #00c8ff;
       }
 
-      /* --------------------
-       HAMBURGER
-    --------------------- */
+      /* HAMBURGER */
       .hamburger {
         display: none;
         flex-direction: column;
@@ -80,9 +82,10 @@
         transform: rotate(-45deg) translate(6px, -6px);
       }
 
-      /* --------------------
-       HERO SECTION
-    --------------------- */
+      main {
+        flex: 1;
+      }
+
       .hero {
         padding: 60px 20px;
         text-align: center;
@@ -90,26 +93,10 @@
       }
 
       .hero h1 {
-        font-size: 32px;
-        margin-bottom: 10px;
-      }
-
-      .hero p {
-        font-size: 18px;
+        font-size: 28px;
         color: #555;
-      }
-
-      /* --------------------
-       RESPONSIVE BOX
-    --------------------- */
-      .box {
-        background: #fff;
-        padding: 20px;
-        margin: 20px auto;
-        max-width: 600px;
-        border-radius: 8px;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-        text-align: center;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
       }
 
       @media (max-width: 600px) {
@@ -118,35 +105,31 @@
         }
       }
 
-      /* --------------------
-       FOOTER
-    --------------------- */
+      /* FOOTER */
       footer {
         background: hsl(34, 76%, 54%);
         color: white;
         text-align: center;
         padding: 10px 0;
-        margin-top: 20px;
         font-size: 14px;
       }
 
-      /* --------------------
-       MEDIA QUERY FOR MOBILE
-    --------------------- */
+      /* MOBILE RESPONSIVE NAV */
       @media (max-width: 768px) {
+        nav {
+          padding: 10px 20px;
+        }
+
         nav ul {
-          position: absolute;
-          top: 60px;
-          left: 0;
-          width: 100%;
-          background: hsl(34, 76%, 54%);
           flex-direction: column;
+          width: 100%;
+          overflow: hidden;
           max-height: 0;
-          text-align: center;
+          transition: max-height 0.4s ease;
         }
 
         nav ul.show {
-          max-height: 300px;
+          max-height: 500px;
         }
 
         .hamburger {
@@ -159,7 +142,7 @@
   <body>
     <!-- NAVBAR -->
     <nav>
-      <div class="logo">My Website</div>
+      <div class="logo">FlexiPage</div>
 
       <div
         class="hamburger"
@@ -178,18 +161,14 @@
       </ul>
     </nav>
 
-    <!-- HERO SECTION -->
-    <div class="hero">
-      <h1>Welcome to My Responsive Webpage</h1>
-      <p>This layout adjusts beautifully on all screen sizes.</p>
-    </div>
-
-    <!-- BOX CONTENT -->
-    <div class="box">
-      Resize the browser window to see the responsive design in action.
-    </div>
+    <!-- MAIN CONTENT -->
+    <main>
+      <div class="hero">
+        <h1>Welcome to My Responsive Webpage</h1>
+      </div>
+    </main>
 
     <!-- FOOTER -->
-    <footer>© 2025 | Responsive Task by Your Name</footer>
+    <footer>© 2025 | Responsive Task by Mrunal Divate</footer>
   </body>
 </html>
